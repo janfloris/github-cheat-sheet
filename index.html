@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Cheat Sheet</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="videowrapper">
+        <video  id="bgvideo" playsinline autoplay="autoplay" muted="muted" loop="loop">
+            <source src="./assets/videos/the-matrix-digital-rain-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <header>
+        <div class="headerbox">
+            <h1>Github CHEAT SHEET</h1>
+            <nav>
+                <div class="buttons">
+
+                    <button data-id="setupblock" class="button">SETUP</button>
+                    <button data-id="initblock" class="button">INIT & CLONE</button>
+                    <button data-id="stageblock" class="button">STAGE</button>
+                    <button data-id="branchblock" class="button">BRANCH & MERGE</button>
+                    <button data-id="inspectblock" class="button">INSPECT & COMPARE</button>
+                    <button data-id="shareblock" class="button">SHARE & UPDATE</button>
+                  </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="panel" id="setupblock">
+            <h2>SETUP</h2>
+            <p>Configuring user information used across all local repositories
+            </p>
+                <section class="commands">
+                <article>
+                    <h3>How to check your Git configuration:
+                    </h3>
+                    <p>The command below returns a list of information about your git configuration including user name and email:
+                    </p>
+                    <p>git config -l
+                    </p>
+                </article>
+                <article>
+                    <h3>How to setup your Git username:
+                    </h3>
+                    <p>
+                    With the command below you can configure your user name:
+                    </p>
+                    <p>
+                    git config --global user.name "Fabio"
+                    </p>
+                </article>
+                <article>
+                    <h3>How to setup your Git user email:
+                    </h3>
+                    <p>
+                    This command lets you setup the user email address you'll use in your commits.
+                    </p>
+                    <p>
+                    git config --global user.email "signups@fabiopacifici.com"
+                    </p>
+                </article>
+                <article>
+                    <h3>How to cache your login credentials in Git:
+                    </h3>
+                    <p>
+                    You can store login credentials in the cache so you don't have to type them in each time. Just use this command:
+                    </p>
+                    <p>
+                    git config --global credential.helper cache
+                    </p>
+                </article>
+                </section>
+        </section>
+        <section class="panel" id="initblock">
+                <h2>INIT & CLONE</h2>
+                <p>Configuring user information, initializing and cloning repositories
+                </p>
+                    <section class="commands">
+                        <article>
+                            <h3>
+                                How to initialize a Git repo:
+                            </h3>
+                            <p>
+                                Everything starts from here. The first step is to initialize a new Git repo locally in your project root. You can do so with the command below:
+                            </p>
+                            <p>
+                                git init
+                            </p>
+                        </article>
+                        <article>
+                            <h3>
+                                How to Clone a Git repo:
+                            </h3>
+                            <p>
+                                retrieve an entire repository from a hosted location via URL:
+                            </p>
+                            <p>
+                                git clone [url]
+                            </p>
+                        </article>
+                    </section>
+        </section>
+        <section class="panel" id="stageblock">
+                <h2>STAGE</h2>
+                <p>Working with snapshots and the Git staging area
+                </p>
+                    <section class="commands">
+                        <article>
+                            <h3>How to add all files in the staging area in Git
+                            </h3>
+                            <p>If you want to add all files in your project to the staging area, you can use a wildcard . and every file will be added for you.
+                            </p>
+                            <p>git add .
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to add a file to the staging area in Git:
+                            </h3>
+                            <p>
+                                The command below will add a file to the staging area. Just replace filename_here with the name of the file you want to add to the staging area.  
+                            </p>
+                            <p>
+                                git add filename_here  
+                            </p>
+                        </article>
+                        <article>
+                            <h3>
+                                How to check a repository's status in Git:
+                            </h3>
+                            <p>
+                                This command will show the status of the current repository including staged, unstaged, and untracked files.
+                            </p>
+                            <p>
+                                git status
+                            </p>
+                        </article>
+                        <article>
+                            <h3>
+                                How to commit changes with a message in Git:
+                            </h3>
+                            <p>
+                                You can add a commit message without opening the editor. This command lets you only specify a short summary for your commit message. 
+                            </p>
+                            <p>
+                                git commit -m "your commit message here"
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to to see the differences of the changes</h3>
+                            <p>
+                                diff of what is changed but not staged   
+                            </p>
+                            <p>
+                                git diff  
+                            </p>
+                        </article>
+                    </section>
+        </section>
+        <section class="panel" id="branchblock">
+                <h2>BRANCH & MERGE
+                </h2>
+                <p>Isolating work in branches, changing context, and integrating changes
+                </p>
+                    <section class="commands">
+                        <article>
+                            <h3>How to list all branches:</h3>
+                            <p>
+                                list your branches. a * will appear next to the currently active branch
+                            </p>
+                            <p>
+                                git branch
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to create a new branch in Git:
+                            </h3>
+                            <p>By default, you have one branch, the main branch. With this command, you can create a new branch. Git won't switch to it automatically
+                            </p>
+                            <p>git branch branch_name
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to switch to a newly created branch in Git:
+                            </h3>
+                            <p>When you want to use a different or a newly created branch you can use this command:
+                            </p>
+                            <p>
+                            git checkout branch_name  
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to delete a branch in Git:
+                            </h3>
+                            <p>When you are done working with a branch and have merged it, you can delete it using the command below:
+                            </p>
+                            <p>
+                            git branch -d branch_name
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to merge two branches in Git:
+                            </h3>
+                            <p>
+                                To merge the history of the branch you are currently in with the branch_name, you will need to use the command below:
+                            </p>
+                            <p>git merge branch_name
+                            </p>
+                        </article>
+                    </section>
+        </section>
+        <section class="panel" id="inspectblock">
+                <h2>INSPECT & COMPARE</h2>
+                <p>Examining logs, diffs and object information
+                </p>
+                    <section class="commands">
+                        <article>
+                            <h3>How to show log in GIT:</h3>
+                            <p>
+                                show the commit history for the currently active branch  
+                            </p>
+                            <p>
+                                git log 
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to show the differences of two branches in GIT:</h3>
+                            <p>show the diff of what is in branchA that is not in branchB
+                            </p>
+                            <p>git diff branchB...branchA
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to show the commit log as a graph in Git:
+                            </h3>
+                            <p>We can use --graph to get the commit log to show as a graph. Also,
+                                --oneline will limit commit messages to a single line.</p>
+                            <p>
+                            git log --graph --oneline
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to show the commit log as a graph of all branches in Git:
+                            </h3>
+                            <p>Does the same as the command above, but for all branches.
+                            </p>
+                            <p>git log --graph --oneline --all
+                            </p>
+                        </article>
+                    </section>
+        </section>
+        <section class="panel" id="shareblock">
+                <h2>SHARE & UPDATE</h2>
+                <p>Retrieving updates from another repository and updating local repos
+                </p>
+                    <section class="commands">
+                        <article>
+                            <h3>How to add a remote repository in Git
+                            </h3>
+                            <p>This command adds a remote repository to your local repository (just replace https://repo_here with your remote repo URL).
+                            </p>
+                            <p>
+                            git add remote https://repo_here
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to pull changes from a remote repo in Git:
+                            </h3>
+                            <p>
+                            If other team members are working on your repository, you can retrieve the latest changes made to the remote repository with the command below:  
+                            </p>
+                            <p>
+                            git pull
+                            </p>
+                        </article>
+                        <article>
+                            <h3>How to push changes to a remote repo in Git:
+                            </h3>
+                            <p>
+                            When all your work is ready to be saved on a remote repository, you can push all changes using the command below:
+                            </p>
+                            <p>
+                            git push
+                            </p>
+                        </article>
+                    </section>
+        </section>
+    </main>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
